@@ -1,9 +1,8 @@
-import json
-from core.extent_table import ExtentTable
-from core.table_maker import TableMaker
+import pandas as pd
+from pandasql import sqldf
 
-with open('balancesheet.json','r') as flexjsonraw:
-    flexjson = json.load(flexjsonraw)
+# Open and read the JSON file
+flexjson = pd.read_json('balancesheet.json',orient='index')
+flexjsondf = pd.DataFrame(flexjson)
 
-print(flexjson)
-
+print(flexjsondf)
