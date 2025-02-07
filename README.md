@@ -24,7 +24,7 @@ Once I had the list of tables that need to be created into a .db file, I then ne
 
 **Final Responses**
 1. In order to view my chart, you can view it at its [public URL here](https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=flexanalyticseng.drawio#Uhttps%3A%2F%2Fraw.githubusercontent.com%2Frizvi14%2Fflexanalyticseng%2Fmain%2Fflexanalyticseng.drawio).
-2. To run the validation script, clone my repository and run validation-step2-rule.py to see the results of validation that show results that look like the below.
+2. To run the validation script, clone my repository and run validation-step2-rule.py to see the results of validation that show results that look like the below. You may need to install the necessary python libraries to run the task.
    ![image](https://github.com/user-attachments/assets/3e568882-6c43-4c94-a2e3-9999327418f0)
 
 Assumptions that I made include:
