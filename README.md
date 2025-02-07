@@ -33,9 +33,10 @@ Assumptions that I made include:
 
 Issues/inconsistencies:
 1. ASSETS is capitalized while the other two accounting category items are not
-2. In my validation, my SQL script is throwing an "Unbalanced" error even though the sum of Asset's children = to the parent value.
-3. At first glance, it looked like Account ID is always NULL if that object has children, but Retained Earnings and Balance Adjustments are an exception to the rule and I can't understand why.
-4. Accounts Payable being repeated as a parent/subparent twice is confusing.
+2. In my validation at the ***category_level***, my SQL script is throwing an "Unbalanced" error even though the sum of Asset's children = to the ***lower_level_sum***. I can't tell if it's due to the column's format or something.
+3. At the ***category_level*** Equity does not seem to be SUM-ing across Retained Earnings + Balance Adjustments, which tells me there's a data structure issue.
+4. At first glance, it looked like Account ID is always NULL if that object has children, but Retained Earnings and Balance Adjustments are an exception to the rule and I can't understand why.
+5. Accounts Payable being repeated as a parent/subparent twice is confusing.
 
 *If I had more time next time:*
 With my limitation only knowing SQL, this is a pretty inefficient way to do things. There are two unnecessary steps here: 1) Having to write the contents into a series of SQL CREATE TABLE statements and 2) Having to publish the CREATE TABLE statements into a .db file prior to running validaiton.
