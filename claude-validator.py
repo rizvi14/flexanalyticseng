@@ -1,3 +1,5 @@
+# Ignore this file, I was just curious how this would be written if I knew Python, but I figured it would be worth keeping in my repo to learn from in the future
+
 import json
 from decimal import Decimal
 from typing import Dict, List, Tuple
