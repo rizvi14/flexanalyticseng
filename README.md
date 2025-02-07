@@ -22,6 +22,26 @@ Once I had the list of tables that need to be created into a .db file, I then ne
 [These SQL lines were all written by myself](https://github.com/rizvi14/flexanalyticseng/blob/main/validation-step2-rule.py#L8-L76), and I used Stackoverflow just to understand how to use sqlite3 and pandas to use SQL on the .db file.
 
 
+**Final Responses**
+1. In order to view my chart, you can view it at its [public URL here](https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=flexanalyticseng.drawio#Uhttps%3A%2F%2Fraw.githubusercontent.com%2Frizvi14%2Fflexanalyticseng%2Fmain%2Fflexanalyticseng.drawio).
+2. To run the validation script, clone my repository and run validation-step2-rule.py to see the results of validation that show results that look like the below.
+   ![image](https://github.com/user-attachments/assets/3e568882-6c43-4c94-a2e3-9999327418f0)
+
+Assumptions that I made include:
+1. That the help from Claude properly inserted values correctly into the DB and interpreted the nesting structure correctly
+2. That all numerical values have been formatted properly in the original JSON
+
+Issues/inconsistencies:
+1. ASSETS is capitalized while the other two accounting category items are not
+2. In my validation, my SQL script is throwing an "Unbalanced" error even though the sum of Asset's children = to the parent value.
+3. At first glance, it looked like Account ID is always NULL if that object has children, but Retained Earnings and Balance Adjustments are an exception to the rule and I can't understand why.
+4. Accounts Payable being repeated as a parent/subparent twice is confusing.
+
+*If I had more time next time:*
+With my limitation only knowing SQL, this is a pretty inefficient way to do things. There are two unnecessary steps here: 1) Having to write the contents into a series of SQL CREATE TABLE statements and 2) Having to publish the CREATE TABLE statements into a .db file prior to running validaiton.
+
+If I had the luxury of more time, I would have just learned Python in order to create a validation that takes the JSON pattern and splits it into the respective parent + immediate children and compares the sum of children to its immediate parent value.
+
 **
 
 
